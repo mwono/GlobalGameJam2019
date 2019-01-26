@@ -15,7 +15,7 @@ public class Player_Movement : Character_Base
     public bool isGrounded;
 
 
-    private Rigidbody2D rigidbody;
+    //private Rigidbody2D rigidbody;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,17 +49,6 @@ public class Player_Movement : Character_Base
             this.transform.parent = coll.transform;
         }
 
-        /*if (moveInput != 0 && transform.parent != null)
-        {
-            GetComponent<Rigidbody2D>().isKinematic = false;
-            transform.parent = null;
-        }
-
-        if(groundCheck && Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            GetComponent<Rigidbody2D>().isKinematic = false;
-            transform.parent = null;
-        }*/
     }
     private void OnCollisionExit2D(Collision2D coll)
     {

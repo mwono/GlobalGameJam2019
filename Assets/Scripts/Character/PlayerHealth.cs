@@ -8,7 +8,7 @@ using UnityEditor.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
 
 	public float healthNum;
-	enemyDamage enemydamage;
+	public enemyDamage enemydamage;
     public float damage;
 
     public bool isDead;
@@ -31,20 +31,9 @@ public class PlayerHealth : MonoBehaviour {
     //when the player is out of lives --> goes to game over screen
     void Update()
     {
-        if(gameObject.transform.position.y < -7) 
-        {
-            isDead = true;
-        }
-        if (isDead == true)
-        {
-            StartCoroutine("Die");
-        }
+       
     }
 
-    IEnumerator Die () 
-    {
-        SceneManager.LoadScene("Zach_Scene");
-        yield return null;
-    }
+
 
 }
