@@ -14,18 +14,21 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] t = System.IO.File.ReadAllLines(scriptPath);
-        for (int i = 0; i < t.Length; i++)
+        if (!scriptPath.Equals(""))
         {
-            sentences.Enqueue(t[i]);
+            string[] t = System.IO.File.ReadAllLines(scriptPath);
+            for (int i = 0; i < t.Length; i++)
+            {
+                sentences.Enqueue(t[i]);
+            }
+            StartCoroutine("TextScroll");
         }
-        StartCoroutine("TextScroll");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonUp("Continue"))
+        if (Input.GetButtonUp("Continue") && !scriptPath.Equals(""))
         {
             if (sentences.Count > 0)
             {
@@ -40,12 +43,19 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void AddNewPath(string p)
+    {
+        string[] t = System.IO.File.ReadAllLines(p);
+        for (int i = 0; i < t.Length; i++)
+        {
+            sentences.Enqueue(t[i]);
+        }
+        StartCoroutine("TextScroll");
+    }
+
     IEnumerator TextScroll()
     {
-        if (textBox.enabled == false)
-        {
-            textBox.enabled = true;
-        }
+        textBox.enabled = true;
         while (sentences.Count > 0)
         {
             temp = sentences.Dequeue();
