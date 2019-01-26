@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Jump : Character_Base
+public class Player_Jump : Player_Movement
 {
     private bool isGrounded;
     public Transform groundCheck;

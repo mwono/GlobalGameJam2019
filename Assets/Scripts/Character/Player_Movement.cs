@@ -23,7 +23,8 @@ public class Player_Movement : Character_Base
     {
 
         moveInput = Input.GetAxis("Horizontal");
-        
+        rigidbody.velocity = new Vector2(moveInput * speed, rigidbody.velocity.y);
+
     }
 
 

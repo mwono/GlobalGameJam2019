@@ -5,17 +5,13 @@ using UnityEngine;
 public class Character_Base : MonoBehaviour
 {
 
-    public float speed;
-    public float jumpForce;
-    public float moveInput;
-
     //protected Health health;
 
     public Rigidbody2D rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+
     }
 
 
@@ -24,8 +20,7 @@ public class Character_Base : MonoBehaviour
     void FixedUpdate()
     {
 
-        moveInput = Input.GetAxis("Horizontal");
-        rigidbody.velocity = new Vector2(moveInput * speed, rigidbody.velocity.y);
+
 
     }
 }
