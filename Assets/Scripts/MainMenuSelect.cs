@@ -31,4 +31,9 @@ public class MainMenuSelect : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void LoadLevel(int number)
+    {
+        SceneManager.LoadScene("Level-" + number);
+    }
 }
