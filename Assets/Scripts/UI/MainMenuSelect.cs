@@ -9,7 +9,7 @@ public class MainMenuSelect : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("MVP");
+        SceneManager.LoadScene("Cutscene1");
     }
 
     public void MainMenu()

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 6376ce605e3a89044b50701575beec0d
+=======
+guid: 018142422dd3b41c09e56ca3c8d0bcf8
+>>>>>>> origin/Zach-Branch
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
@@ -7,7 +11,11 @@ AudioImporter:
     loadType: 0
     sampleRateSetting: 0
     sampleRateOverride: 44100
+<<<<<<< HEAD
     compressionFormat: 0
+=======
+    compressionFormat: 1
+>>>>>>> origin/Zach-Branch
     quality: 1
     conversionMode: 0
   platformSettingOverrides: {}

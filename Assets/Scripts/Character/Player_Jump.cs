@@ -9,12 +9,14 @@ public class Player_Jump : Player_Movement
     //public float checkRadius;
     public LayerMask whatIsGround;
 
+    //public Animator animator;
 
     public int doubleJump;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //animator = GetComponentInChildren<Animator>();
+        //animator.SetBool("isJumping", false);
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class Player_Jump : Player_Movement
         if (isGrounded == true)
         {
             doubleJump = 1;
+            animator.SetBool("isJumping", false);
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && doubleJump > 0)
@@ -33,6 +36,17 @@ public class Player_Jump : Player_Movement
             rigidbody.velocity = Vector2.up * jumpForce;
             doubleJump--;
 
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow)) 
+        {
+            //Debug.Log("jump");
+            animator.SetBool("isJumping", true);
+            animator.SetBool("isIdle", false);
+        }
+        else
+        {
+            animator.SetBool("isJumping", false);
         }
 
     }

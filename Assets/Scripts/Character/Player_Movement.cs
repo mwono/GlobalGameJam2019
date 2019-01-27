@@ -14,6 +14,9 @@ public class Player_Movement : Character_Base
     public LayerMask isMoving;
     public bool isGrounded;
 
+    public Animator animator;
+
+    private bool facingRight = true;
 
     //private Rigidbody2D rigidbody;
     // Start is called before the first frame update
@@ -24,11 +27,12 @@ public class Player_Movement : Character_Base
 
     void Update()
     {
-        if (isGrounded == true)
+        animator.SetFloat("Speed", Mathf.Abs(moveInput));
+        /*if (isGrounded == true)
         {
-            //Debug.Log("On moving platform");
+            Debug.Log("On moving platform");
 
-        }
+        }*/
     }
     void FixedUpdate()
     {
@@ -36,6 +40,17 @@ public class Player_Movement : Character_Base
         moveInput = Input.GetAxis("Horizontal");
         rigidbody.velocity = new Vector2(moveInput * speed, rigidbody.velocity.y);
 
+        if(moveInput > 0 && !facingRight) //right
+        {
+            transform.localScale -= new Vector3(transform.localScale.x * 2, 0, 0);
+            facingRight = true;
+        }
+
+        if(moveInput < 0 && facingRight) //left
+        {
+            transform.localScale -= new Vector3(transform.localScale.x * 2, 0, 0);
+            facingRight = false;
+        }
         //moving platform
         //isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, isMoving);
 

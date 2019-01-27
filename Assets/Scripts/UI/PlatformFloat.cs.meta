@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/UI/PlatformFloat.cs.meta
 guid: 057458f1ac6e5894b88c614dcae7db62
+=======
+guid: 2c7a96d33e54d4886b40e8bc0e36478c
+>>>>>>> origin/Zach-Branch:Assets/Scripts/UI/PlatformFloat.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
