@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Jump : Character_Base
+public class Player_Jump : Player_Movement
 {
-    private bool isGrounded;
-    public Transform groundCheck;
-    public float checkRadius;
+    //private bool isGrounded;
+    //public Transform groundCheck;
+    //public float checkRadius;
     public LayerMask whatIsGround;
+
 
     public int doubleJump;
     // Start is called before the first frame update
@@ -26,9 +27,12 @@ public class Player_Jump : Character_Base
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && doubleJump > 0)
         {
+            isGrounded = false;
+            this.transform.SetParent(null);
             //GetComponent<Rigidbody2D>(Vector2.up * jumpForce);
             rigidbody.velocity = Vector2.up * jumpForce;
             doubleJump--;
+
         }
 
     }

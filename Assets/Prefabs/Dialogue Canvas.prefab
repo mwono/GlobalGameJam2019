@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current: {fileID: 4048460718618092229}
   textBox: {fileID: 4048460718121389052}
-  am: {fileID: 844084995250728684, guid: 33474812d6f7f76479391ee49a9d7c39, type: 3}
+  am: {fileID: 0}
   textSpeed: 0.03
   scriptPath: 
   dialogueIsPaused: 0

@@ -11,6 +11,7 @@ public class PlatformFloat : MonoBehaviour
     private Vector3 direction;
     private Vector3 startPos;
 
+
     // Start is called before the first frame update
     void Start()
     {
