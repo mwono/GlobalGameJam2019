@@ -42,7 +42,8 @@ public class DialogueManager : MonoBehaviour
             {
                 StopCoroutine("TextScroll");
                 StartCoroutine("TextScroll");
-            } else
+            }
+            else
             {
                 StopCoroutine("TextScroll");
                 HideTextBox();
@@ -59,6 +60,7 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(t[i]);
         }
+        StopCoroutine("TextScroll");
         StartCoroutine("TextScroll");
     }
 
@@ -68,53 +70,20 @@ public class DialogueManager : MonoBehaviour
         while (sentences.Count > 0)
         {
             temp = sentences.Dequeue();
-            switch (temp)
+            if (temp.Equals("BREAK"))
             {
-                //case "(K)":
-                //    {
-                //        portrait.sprite = kidSprite;
-                //        current.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 385);
-                //        current.GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
-                //        //current.GetComponent<RectTransform>().SetPositionAndRotation(Camera.main.WorldToScreenPoint(new Vector3(35, 0))
-                //        //    , new Quaternion());
-                //        temp = sentences.Dequeue();
-                //        break;
-                //    }
-                //case "(D)":
-                //    {
-                //        portrait.sprite = dadSprite;
-                //        current.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 385);
-                //        current.GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
-                //        //current.GetComponent<RectTransform>().SetPositionAndRotation(Camera.main.WorldToScreenPoint(new Vector3(35, 0))
-                //        //    , new Quaternion());
-                //        temp = sentences.Dequeue();
-                //        break;
-                //    }
-                //case "(N)":
-                //    {
-                //        portrait.sprite = noneSprite;
-                //        current.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 450);
-                //        current.GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
-                //        //current.GetComponent<RectTransform>().SetPositionAndRotation(Camera.main.WorldToScreenPoint(new Vector3(0, 0))
-                //        //    , new Quaternion());
-                //        temp = sentences.Dequeue();
-                //        break;
-                //    }
-                case "BREAK":
-                    {
-                        dialogueIsPaused = true;
-                        while (am.GetComponent<AudioSource>().isPlaying)
-                        {
-                            yield return null;
-                        }
-                        HideTextBox();
-                        while (dialogueIsPaused)
-                        {
-                            yield return null;
-                        }
-                        temp = sentences.Dequeue();
-                        break;
-                    }
+                dialogueIsPaused = true;
+                while (am.GetComponent<AudioSource>().isPlaying)
+                {
+                    yield return null;
+                }
+                HideTextBox();
+                while (dialogueIsPaused)
+                {
+                    yield return null;
+                }
+                temp = sentences.Dequeue();
+                textBox.enabled = true;
             }
             current.text = "";
             if (am.GetComponent<AudioSource>().isPlaying)
@@ -147,3 +116,52 @@ public class DialogueManager : MonoBehaviour
         textBox.enabled = false;
     }
 }
+//switch (temp)
+//{
+//    //case "(K)":
+//    //    {
+//    //        portrait.sprite = kidSprite;
+//    //        current.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 385);
+//    //        current.GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
+//    //        //current.GetComponent<RectTransform>().SetPositionAndRotation(Camera.main.WorldToScreenPoint(new Vector3(35, 0))
+//    //        //    , new Quaternion());
+//    //        temp = sentences.Dequeue();
+//    //        break;
+//    //    }
+//    //case "(D)":
+//    //    {
+//    //        portrait.sprite = dadSprite;
+//    //        current.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 385);
+//    //        current.GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
+//    //        //current.GetComponent<RectTransform>().SetPositionAndRotation(Camera.main.WorldToScreenPoint(new Vector3(35, 0))
+//    //        //    , new Quaternion());
+//    //        temp = sentences.Dequeue();
+//    //        break;
+//    //    }
+//    //case "(N)":
+//    //    {
+//    //        portrait.sprite = noneSprite;
+//    //        current.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 450);
+//    //        current.GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
+//    //        //current.GetComponent<RectTransform>().SetPositionAndRotation(Camera.main.WorldToScreenPoint(new Vector3(0, 0))
+//    //        //    , new Quaternion());
+//    //        temp = sentences.Dequeue();
+//    //        break;
+//    //    }
+//    case "BREAK":
+//        {
+//            dialogueIsPaused = true;
+//            while (am.GetComponent<AudioSource>().isPlaying)
+//            {
+//                yield return null;
+//            }
+//            HideTextBox();
+//            while (dialogueIsPaused)
+//            {
+//                yield return null;
+//            }
+//            temp = sentences.Dequeue();
+//            textBox.enabled = true;
+//            break;
+//        }
+//}
