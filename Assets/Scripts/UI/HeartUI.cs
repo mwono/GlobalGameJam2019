@@ -7,12 +7,9 @@ public class HeartUI : MonoBehaviour
 {
     public float health;
     public int heartNum;
-    float missingHealth;
     
 
     public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
 
     private void Update()
     {
@@ -24,6 +21,7 @@ public class HeartUI : MonoBehaviour
         else if (health == 2.0f)
         {
             hearts[2].fillAmount = 0f;
+            
 
         }
         else if (health==1.5f)
