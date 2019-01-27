@@ -37,10 +37,25 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonUp("Hide"))
+        {
+            if (textBox.enabled)
+            {
+                current.enabled = false;
+                textBox.enabled = false;
+                StopCoroutine("TextScroll");
+            } else
+            {
+                current.enabled = true;
+                textBox.enabled = true;
+                StartCoroutine("TextScroll");
+            }
+        }
         if (Input.GetButtonUp("Continue") && !scriptPath.Equals(""))
         {
             if (sentences.Count > 0)
             {
+                current.enabled = true;
                 StopCoroutine("TextScroll");
                 StartCoroutine("TextScroll");
             }

@@ -153,7 +153,7 @@ MonoBehaviour:
   textBox: {fileID: 4048460718121389052}
   am: {fileID: 0}
   textSpeed: 0.03
-  scriptPath: 
+  scriptPath: Assets/Dialogues/Text1.txt
   dialogueIsPaused: 0
 --- !u!1 &4048460718121389050
 GameObject:
