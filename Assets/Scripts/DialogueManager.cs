@@ -45,8 +45,7 @@ public class DialogueManager : MonoBehaviour
             } else
             {
                 StopCoroutine("TextScroll");
-                current.text = "";
-                textBox.enabled = false;
+                HideTextBox();
                 //portrait.enabled = false;
                 //MoveScene
             }
@@ -104,6 +103,11 @@ public class DialogueManager : MonoBehaviour
                 case "BREAK":
                     {
                         dialogueIsPaused = true;
+                        while (am.GetComponent<AudioSource>().isPlaying)
+                        {
+                            yield return null;
+                        }
+                        HideTextBox();
                         while (dialogueIsPaused)
                         {
                             yield return null;
@@ -132,9 +136,14 @@ public class DialogueManager : MonoBehaviour
             }
             //yield return new WaitForSeconds(2f);
         }
-        current.text = "";
-        textBox.enabled = false;
+        HideTextBox();
         //portrait.enabled = false;
         //MoveScene
+    }
+
+    void HideTextBox()
+    {
+        current.text = "";
+        textBox.enabled = false;
     }
 }
