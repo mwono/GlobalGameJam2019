@@ -18,16 +18,16 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach (AudioClip clip in am.clips)
+        {
+            clips.Enqueue(clip);
+        }
         if (!scriptPath.Equals(""))
         {
             string[] t = System.IO.File.ReadAllLines(scriptPath);
             foreach (string s in t)
             {
                 sentences.Enqueue(s);
-            }
-            foreach (AudioClip clip in am.clips)
-            {
-                clips.Enqueue(clip);
             }
             StartCoroutine("TextScroll");
         }
@@ -117,7 +117,10 @@ public class DialogueManager : MonoBehaviour
             {
                 am.GetComponent<AudioSource>().Stop();
             }
-            am.GetComponent<AudioSource>().PlayOneShot(clips.Dequeue());
+            if (clips.Count > 0)
+            {
+                am.GetComponent<AudioSource>().PlayOneShot(clips.Dequeue());
+            }
             for (int i = 0; i < temp.Length; i++)
             {
                 current.text += temp[i];
