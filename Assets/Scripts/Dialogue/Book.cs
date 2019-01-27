@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Book : MonoBehaviour
 {
@@ -16,8 +17,7 @@ public class Book : MonoBehaviour
     {
         if (collision.name.Equals("Player"))
         {
-            //Show Victory UI??
-            //Move Scene
+            SceneManager.LoadScene("Cutscene2");
         }
     }
 }

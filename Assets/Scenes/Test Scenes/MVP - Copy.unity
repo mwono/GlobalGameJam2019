@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 507368635}
-  speed: 50
+  speed: 25
   jumpForce: 40
   moveInput: 0
   checkRadius: 3
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 507368635}
-  speed: 40
+  speed: 20
   jumpForce: 37
   moveInput: 0
   checkRadius: 5

@@ -64,7 +64,13 @@ public class DialogueManager : MonoBehaviour
                 StopCoroutine("TextScroll");
                 HideTextBox();
                 //portrait.enabled = false;
-                SceneManager.LoadScene("MVP");
+                if (SceneManager.GetActiveScene().name.Equals("Cutscene1"))
+                {
+                    SceneManager.LoadScene("MVP");
+                } else
+                {
+                    GameObject.Find("CutsceneManager").GetComponent<Cutscene2Manager>().enabled = true;
+                }
             }
         }
     }
@@ -123,7 +129,14 @@ public class DialogueManager : MonoBehaviour
         }
         HideTextBox();
         //portrait.enabled = false;
-        SceneManager.LoadScene("MVP");
+        if (SceneManager.GetActiveScene().name.Equals("Cutscene1"))
+        {
+            SceneManager.LoadScene("MVP");
+        }
+        else
+        {
+            GameObject.Find("CutsceneManager").GetComponent<Cutscene2Manager>().enabled = true;
+        }
     }
 
     void HideTextBox()
@@ -132,52 +145,3 @@ public class DialogueManager : MonoBehaviour
         textBox.enabled = false;
     }
 }
-//switch (temp)
-//{
-//    //case "(K)":
-//    //    {
-//    //        portrait.sprite = kidSprite;
-//    //        current.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 385);
-//    //        current.GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
-//    //        //current.GetComponent<RectTransform>().SetPositionAndRotation(Camera.main.WorldToScreenPoint(new Vector3(35, 0))
-//    //        //    , new Quaternion());
-//    //        temp = sentences.Dequeue();
-//    //        break;
-//    //    }
-//    //case "(D)":
-//    //    {
-//    //        portrait.sprite = dadSprite;
-//    //        current.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 385);
-//    //        current.GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
-//    //        //current.GetComponent<RectTransform>().SetPositionAndRotation(Camera.main.WorldToScreenPoint(new Vector3(35, 0))
-//    //        //    , new Quaternion());
-//    //        temp = sentences.Dequeue();
-//    //        break;
-//    //    }
-//    //case "(N)":
-//    //    {
-//    //        portrait.sprite = noneSprite;
-//    //        current.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 450);
-//    //        current.GetComponent<RectTransform>().anchoredPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
-//    //        //current.GetComponent<RectTransform>().SetPositionAndRotation(Camera.main.WorldToScreenPoint(new Vector3(0, 0))
-//    //        //    , new Quaternion());
-//    //        temp = sentences.Dequeue();
-//    //        break;
-//    //    }
-//    case "BREAK":
-//        {
-//            dialogueIsPaused = true;
-//            while (am.GetComponent<AudioSource>().isPlaying)
-//            {
-//                yield return null;
-//            }
-//            HideTextBox();
-//            while (dialogueIsPaused)
-//            {
-//                yield return null;
-//            }
-//            temp = sentences.Dequeue();
-//            textBox.enabled = true;
-//            break;
-//        }
-//}
