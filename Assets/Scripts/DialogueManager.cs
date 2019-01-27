@@ -126,7 +126,11 @@ public class DialogueManager : MonoBehaviour
                 current.text += temp[i];
                 yield return new WaitForSeconds(textSpeed);
             }
-            yield return new WaitForSeconds(2f);
+            while (am.GetComponent<AudioSource>().isPlaying)
+            {
+                yield return null;
+            }
+            //yield return new WaitForSeconds(2f);
         }
         current.text = "";
         textBox.enabled = false;
