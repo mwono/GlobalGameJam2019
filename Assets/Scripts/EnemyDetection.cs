@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDetection : MonoBehaviour
 {
     public GameObject player;
-    public float detectionRadius = 5.0f;
+    public float detectionRadius = 1.5f;
     public bool alert = false;
 
     // Start is called before the first frame update
@@ -35,7 +35,6 @@ public class EnemyDetection : MonoBehaviour
             {
                 //Debug.Log("enemy spotted");
                 alert = true;
-                this.GetComponent<BoxCollider2D>().enabled = true;
             }
         }
     }
