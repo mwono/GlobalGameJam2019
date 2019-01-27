@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
 
 	public static float healthNum;
-	enemyDamage enemydamage;
+	public enemyDamage enemydamage;
     public float damageEnemy;
     public float damageFall;
     public float damageLava;

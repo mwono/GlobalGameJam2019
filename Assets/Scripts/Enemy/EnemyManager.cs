@@ -30,8 +30,8 @@ public class EnemyManager : PlayerHealth
     {
         if (collision.tag == "Weapon")
         {
-            health = health -1;
-            if(health <= 0)
+            takeDamage();
+            if (health <= 0)
             {
                 //animator.SetBool("death", true);
                 //source.PlayOneShot(deathSound, 2);
@@ -43,5 +43,21 @@ public class EnemyManager : PlayerHealth
     public float getDamage()
     {
         return attDamage;
+    }
+
+
+    public void takeDamage()
+    {
+        health -= 1;
+        //Debug.Log("Enemy health: " + health);
+
+    }
+
+
+
+
+    public float returnHealth()
+    {
+        return health;
     }
 }

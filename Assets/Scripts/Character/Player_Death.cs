@@ -6,54 +6,50 @@ using UnityEngine.SceneManagement;
 public class Player_Death : EnemyManager
 {
     //PlayerHealth playerHealth;
-    //EnemyManager enemyManager;
+    public EnemyManager enemyManager;
     public Vector3 respawnPoint;
     //float Health;
     //float attDamage;
 
     private bool invincible = false;
 
-    public void Start()
-    {
-        if(healthNum > 0)
-        {
-            Debug.Log(healthNum);
-        }
-
-    }
-
 
     public void Update()
     {
         //Health = playerHealth.getHealth();
         //attDamage = enemyManager.getDamage();
-        if(healthNum >= 0)
-        {
-            Debug.Log(healthNum);
-        }
+        Debug.Log("Player health: " + healthNum);
 
+        if (healthNum <= 0)
+        {
+            SceneManager.LoadScene("Zach_Scene");
+
+        }
 
     }
 
-    public void noLives()
+    /*public void noLives()
     {
-        if(healthNum <= 0)
+        if (healthNum <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("Zach_Scene");
+            Die();
         }
-    }
+    }*/
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (!invincible)
         {
             if (other.gameObject.tag == "Enemy")
             {
                 healthNum -= attDamage;
+                //Debug.Log("Player health: " + healthNum);
                 invincible = true;
                 Invoke("restInvulnerability", 3);
-                //need invinsibility timer here
+
 
             }
         }
