@@ -12,11 +12,11 @@ public class Player_Death : EnemyManager
     //float attDamage;
 
     private bool invincible = false;
-    private Animator animator;
+    //private Animator animator;
 
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        //animator = GetComponentInChildren<Animator>();
     }
 
     public void Update()
@@ -27,7 +27,7 @@ public class Player_Death : EnemyManager
 
         if (healthNum <= 0)
         {
-            animator.SetTrigger("isDead");
+            //animator.SetTrigger("isDead");
 
             SceneManager.LoadScene("Game Over");
 

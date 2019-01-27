@@ -14,6 +14,8 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rg;
     private float timer;
 
+    private bool facingRight = true;
+
     void Start()
     {
         rg = GetComponent<Rigidbody2D>();
@@ -31,10 +33,15 @@ public class EnemyMovement : MonoBehaviour
 
         if (Mathf.Cos(Time.time * timeScale) > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            //transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale -= new Vector3(transform.localScale.x * 2, 0, 0);
+            facingRight = true;
+
         } else
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            //transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale -= new Vector3(transform.localScale.x * 2, 0, 0);
+            facingRight = false;
         }
 
         timer += (1 * Time.deltaTime);
