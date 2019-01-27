@@ -3,19 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEditor.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public float healthNum;
-	public enemyDamage enemydamage;
-    public float damage;
+	public static float healthNum;
+	enemyDamage enemydamage;
+    public float damageEnemy;
+    public float damageFall;
+    public float damageLava;
 
-    public bool isDead;
 
-	public void Start(){
+
+    public void Start(){
 		healthNum = 3;
-        damage = enemydamage.getDamage(); 
+        damageEnemy = enemydamage.getDamage();
 
 	}
 
@@ -23,16 +24,27 @@ public class PlayerHealth : MonoBehaviour {
 		return healthNum;
 	}
 
-	public float playerDamage(){
-        healthNum -= damage;
+	public float enemyDamage(){
+        healthNum -= damageEnemy;
 		return healthNum;
 	}
 
-    //when the player is out of lives --> goes to game over screen
-    void Update()
-    {
-       
+    //when the player is out of lives --> goes back to a specific point
+
+	public float damageByFalling(){ //is there falling?
+        damageFall = 1f;
+        healthNum -= damageFall;
+        return healthNum;
+
     }
+
+    public float damageByLava(){ 
+        damageLava = 1f;
+        healthNum -= damageLava;
+        return healthNum;
+
+    }
+
 
 
 

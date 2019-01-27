@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : PlayerHealth
 {
     public float attDamage = 1;
     public float health = 2;
