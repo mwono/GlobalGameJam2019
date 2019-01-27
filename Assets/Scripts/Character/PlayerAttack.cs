@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public Animator animator;
+    public Animator weapon;
     
     EnemyManager enemyManager; 
     // Start is called before the first frame update
@@ -16,13 +17,15 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetBool("isAttacking", true);
+            weapon.SetBool("isAttacking", true);
         }
         else
         {
-            animator.SetBool("isAttacking", false);
+                animator.SetBool("isAttacking", false);
+                weapon.SetBool("isAttacking", false);
         }
     }
 
