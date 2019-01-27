@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: fe10679b8e9eb084eb96ee361685d808
+=======
+guid: cf224b4dcf0fc489abdb31652d85b9a3
+>>>>>>> origin/Zach-Branch
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Code New Roman
+  fontNames:
+  - Code New Roman
+<<<<<<< HEAD
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 70b41072aa55d074fb0aba731e0424a2, type: 3}
+  - {fileID: 12800000, guid: 5f3e22dbd8465054f9b0bd8cf67362ff, type: 3}
+=======
+  fallbackFontReferences: []
+>>>>>>> origin/Zach-Branch
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Moving Platform
+  - Fall Detector
+  - Enemy
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -13,6 +17,9 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - Ground
+  - Moving Platform
   - 
   - 
   - 
@@ -33,11 +40,14 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Triggers
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3376714647
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 1800418217
     locked: 0
