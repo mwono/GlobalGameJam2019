@@ -12,11 +12,12 @@ public class Player_Death : EnemyManager
     //float attDamage;
 
     private bool invincible = false;
-    private Animator animator;
+    public Animator animator;
 
+    public GameObject gameover;
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        //animator = GetComponentInChildren<Animator>();
     }
 
     public void Update()
@@ -27,9 +28,9 @@ public class Player_Death : EnemyManager
 
         if (healthNum <= 0)
         {
-            animator.SetTrigger("isDead");
-
-            SceneManager.LoadScene("Game Over");
+            //animator.SetBool("isDead", true);
+            StartCoroutine("GameDelay");
+            //SceneManager.LoadScene("Game Over");
 
         }
 
@@ -52,6 +53,7 @@ public class Player_Death : EnemyManager
         {
             if (other.gameObject.tag == "Enemy")
             {
+                //Debug.Log("Damage Detected");
                 healthNum -= attDamage;
                 //Debug.Log("Player health: " + healthNum);
                 invincible = true;
@@ -63,14 +65,18 @@ public class Player_Death : EnemyManager
 
         if(other.tag == "Death Zone")
         {
+            //animator.SetBool("isDead", true);
             healthNum -= 0.5f;
-            transform.position = respawnPoint;
+            StartCoroutine("Delay");
+            //transform.position = respawnPoint;
 
         }
 
         if(other.tag == "Checkpoint")
         {
             respawnPoint = other.transform.position;
+            //yield return new WaitForSeconds(1);
+
         }
     }
 
@@ -79,4 +85,26 @@ public class Player_Death : EnemyManager
         invincible = false;
     }
 
+    public IEnumerator Delay()
+    {
+        animator.SetBool("isDead", true);
+        //healthNum -= 0.5f;
+        yield return new WaitForSeconds(1.3f);
+        //WaitForSeconds(3);
+        animator.SetBool("isDead", false);
+        transform.position = respawnPoint;
+        //print(Time.time);
+    }
+
+    public IEnumerator GameDelay()
+    {
+        animator.SetBool("isDead", true);
+        //healthNum -= 0.5f;
+        yield return new WaitForSeconds(1.3f);
+        //WaitForSeconds(3);
+        //animator.SetBool("isDead", false);
+        //transform.position = respawnPoint;
+        gameover.SetActive(true);
+        Time.timeScale = 0f;
+    }
 }

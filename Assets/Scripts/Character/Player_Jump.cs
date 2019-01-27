@@ -42,7 +42,7 @@ public class Player_Jump : Player_Movement
         {
             //Debug.Log("jump");
             animator.SetBool("isJumping", true);
-            animator.SetBool("isIdle", false);
+
         }
         else
         {

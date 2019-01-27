@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour {
 
 
     public void Start(){
-		healthNum = 3;
+		healthNum = 1;
         damageEnemy = enemydamage.getDamage();
 
 	}
@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour {
 	public float damageByFalling(){ //is there falling?
         damageFall = 1f;
         healthNum -= damageFall;
+        
         return healthNum;
 
     }
