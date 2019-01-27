@@ -12,7 +12,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.name.Equals("Player") && !path.Equals(""))
         {
             if (!dm.dialogueIsPaused) {
-                dm.AddNewPath(path);
+                dm.LoadPath(path);
             }
             dm.dialogueIsPaused = false;
             this.gameObject.SetActive(false);

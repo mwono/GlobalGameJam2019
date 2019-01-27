@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public Queue<string> sentences = new Queue<string>();
+    public Queue<AudioClip> clips = new Queue<AudioClip>();
     public Text current;//Old text length: 450
     public Image textBox;//, portrait;
+    public AudioManager am;
     //public Sprite kidSprite, dadSprite, noneSprite;
     public float textSpeed;
     public string scriptPath;
@@ -19,9 +21,13 @@ public class DialogueManager : MonoBehaviour
         if (!scriptPath.Equals(""))
         {
             string[] t = System.IO.File.ReadAllLines(scriptPath);
-            for (int i = 0; i < t.Length; i++)
+            foreach (string s in t)
             {
-                sentences.Enqueue(t[i]);
+                sentences.Enqueue(s);
+            }
+            foreach (AudioClip clip in am.clips)
+            {
+                clips.Enqueue(clip);
             }
             StartCoroutine("TextScroll");
         }
@@ -47,7 +53,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void AddNewPath(string p)
+    public void LoadPath(string p)
     {
         string[] t = System.IO.File.ReadAllLines(p);
         for (int i = 0; i < t.Length; i++)
@@ -107,13 +113,17 @@ public class DialogueManager : MonoBehaviour
                     }
             }
             current.text = "";
+            if (am.GetComponent<AudioSource>().isPlaying)
+            {
+                am.GetComponent<AudioSource>().Stop();
+            }
+            am.GetComponent<AudioSource>().PlayOneShot(clips.Dequeue());
             for (int i = 0; i < temp.Length; i++)
             {
                 current.text += temp[i];
                 yield return new WaitForSeconds(textSpeed);
             }
-            yield return new WaitForSeconds(4f);
-            break;
+            yield return new WaitForSeconds(2f);
         }
         current.text = "";
         textBox.enabled = false;
