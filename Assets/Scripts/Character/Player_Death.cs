@@ -22,7 +22,7 @@ public class Player_Death : EnemyManager
 
         if (healthNum <= 0)
         {
-            SceneManager.LoadScene("Zach_Scene");
+            SceneManager.LoadScene("Game Over");
 
         }
 
