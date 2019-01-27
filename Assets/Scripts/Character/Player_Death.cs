@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Player_Death : EnemyManager
 {
-    PlayerHealth playerHealth;
+    //PlayerHealth playerHealth;
+    //EnemyManager enemyManager;
     public Vector3 respawnPoint;
-    float Health;
+    //float Health;
+    //float attDamage;
+
+    private bool invincible = false;
 
     public void Start()
     {
@@ -21,13 +25,19 @@ public class Player_Death : EnemyManager
 
     public void Update()
     {
-        Health = playerHealth.getHealth();
+        //Health = playerHealth.getHealth();
+        //attDamage = enemyManager.getDamage();
+        if(healthNum >= 0)
+        {
+            Debug.Log(healthNum);
+        }
+
 
     }
 
     public void noLives()
     {
-        if(Health <= 0)
+        if(healthNum <= 0)
         {
             SceneManager.LoadScene("GameOver");
         }
@@ -36,10 +46,16 @@ public class Player_Death : EnemyManager
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Enemy")
+        if (!invincible)
         {
-            healthNum -= attDamage;
+            if (other.gameObject.tag == "Enemy")
+            {
+                healthNum -= attDamage;
+                invincible = true;
+                Invoke("restInvulnerability", 3);
+                //need invinsibility timer here
 
+            }
         }
 
         if(other.tag == "Death Zone")
@@ -53,6 +69,11 @@ public class Player_Death : EnemyManager
         {
             respawnPoint = other.transform.position;
         }
+    }
+
+    void restInvulnerability()
+    {
+        invincible = false;
     }
 
 }
