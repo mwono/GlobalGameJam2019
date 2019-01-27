@@ -11,7 +11,7 @@ public class EnemyDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.gameObject.layer = 2;
     }
 
     // Update is called once per frame
