@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 532838545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbcedd6024c1efc468a90eb51dd271e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dc77ce38b4b04810a733d8f3264f50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &550360325
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 674729505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbcedd6024c1efc468a90eb51dd271e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dc77ce38b4b04810a733d8f3264f50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &674729507
@@ -1423,7 +1423,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: cf224b4dcf0fc489abdb31652d85b9a3, type: 3}
     m_FontSize: 52
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 113
     m_Alignment: 1
@@ -1432,7 +1432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Untitled
+  m_Text: The Unfinished Tale
 --- !u!222 &1626047192
 CanvasRenderer:
   m_ObjectHideFlags: 0

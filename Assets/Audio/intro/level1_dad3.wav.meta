@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 7f57608238445394b9f34f5249d69653
+=======
+guid: 72038b7154003439a95735bf3aaa160f
+>>>>>>> origin/Zach-Branch
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+<<<<<<< HEAD
+    compressionFormat: 0
+=======
+    compressionFormat: 1
+>>>>>>> origin/Zach-Branch
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

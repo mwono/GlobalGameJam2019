@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour {
 
 
     public void Start(){
-		healthNum = 1;
+		healthNum = 3;
         damageEnemy = enemydamage.getDamage();
 
 	}
