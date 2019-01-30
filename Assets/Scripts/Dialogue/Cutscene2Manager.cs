@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Cutscene2Manager : MonoBehaviour
 {
@@ -27,5 +28,7 @@ public class Cutscene2Manager : MonoBehaviour
         im2.CrossFadeAlpha(0f, 3f, false);
         yield return new WaitForSeconds(3f);
         im2.enabled = false;
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("credits");
     }
 }
