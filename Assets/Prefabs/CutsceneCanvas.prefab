@@ -128,14 +128,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6023928051702823813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21ee10cf07b097c4690872fcba1cf12f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f19b5f728ef367419c18a68dfe6a0b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: {fileID: 5708437648922345145}
-  textBox: {fileID: 3054059786185077312}
+  current: {fileID: 0}
+  textBox: {fileID: 0}
   am: {fileID: 0}
-  textSpeed: 0.03
-  scriptPath: Assets/Dialogues/Text1.txt
+  textSpeed: 0
+  scriptPath: 
   dialogueIsPaused: 0
 --- !u!1 &6416069373915579762
 GameObject:

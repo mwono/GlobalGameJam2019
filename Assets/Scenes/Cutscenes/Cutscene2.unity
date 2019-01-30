@@ -638,7 +638,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1794059448}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1e2425097e3e59458c8dd575b88b6fd, type: 3}
+  m_Script: {fileID: 11500000, guid: b0fc3dd547f39a049b1cccb50fb6d52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   im1: {fileID: 6520932861604075859}
@@ -646,6 +646,7 @@ MonoBehaviour:
   im3: {fileID: 493353290}
   princess: {fileID: 1143024296}
   castleIntBG: {fileID: 1708022629}
+  player: {fileID: 593390667}
 --- !u!4 &1794059450
 Transform:
   m_ObjectHideFlags: 0
@@ -695,7 +696,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6023928053383118408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21ee10cf07b097c4690872fcba1cf12f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f19b5f728ef367419c18a68dfe6a0b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   current: {fileID: 5708437650463243124}
