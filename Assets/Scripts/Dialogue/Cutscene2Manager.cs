@@ -29,6 +29,6 @@ public class Cutscene2Manager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         im2.enabled = false;
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("credits");
+        SceneManager.LoadScene("Credits");
     }
 }
